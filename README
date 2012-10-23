@@ -1,0 +1,28 @@
+Just Another Twitter Clone
+==========================
+
+This is just another twitter clone that has probably been done a thousand times before.
+Right now, it's using Rails 3.2.8 and Ruby 1.9.3p277.
+For easy setup:
+
+bundle install
+rake db:migrate
+rake db:seed
+
+
+Features
+========
+RESTful authentication, one to many and many to many models, ajax used to reduce queries,
+automatic parsing of names and hastags (though nothing is done with it), and the basics
+tempate that can easily be expanded on.
+
+Problems
+=========
+Various caching methods should be set up.    Implementing a seperate controller for search would allow
+some unique querying based on each posts user id, hastag (if there is one), and referencing userids.
+You could take this further and implement an algorithm mimicking the "trending topics."
+
+Other Areas
+===========
+A user profile could easily be setup, and include everything from customized css, to wherever your imagination
+takes you.
