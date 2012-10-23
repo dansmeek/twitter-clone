@@ -1,0 +1,24 @@
+
+<div id="following_user"> <h1><%= image_tag @user.gravatar_url(:size => 75)%>
+<span class="current_user"><%= @user.username %></span></h1></div>
+
+<% if current_user.username != @user.username %>
+
+    <div class="follow_form"><%= form_tag toggle_follow_path do %>
+
+
+
+    <% if current_user.is_friend? @user %>
+        <%= submit_tag "Unfollow", :class => "follow-button" %>
+    <% else %>
+        <%= submit_tag "Follow", :class => "follow-button" %>
+     <% end %>
+
+
+
+<% end %>
+  </div>
+
+<% end %>
+<%=  render :partial => 'tweets_list', :locals => {:tweets => @tweets} %>
+

@@ -1,0 +1,74 @@
+<script type="text/javascript">
+
+  $(function(){
+  $('.tweet_message_box').keydown(function() {
+          var content_length = $(this).val().length;
+          var remaining = 140 - content_length;
+      $('.timer').html(remaining);
+      if (remaining < 55 && remaining >21) {
+          $('.timer').addClass('cool-grey');
+          $('.timer').removeClass('dark_red');
+          $('.timer').removeClass('red');
+      }
+      else if (remaining < 21 && remaining >0) {
+          $('.timer').addClass('dark_red');
+          $('.timer').removeClass('red');
+          $('.timer').removeClass('cool-grey');
+
+
+      }
+      else if (remaining <=0 )
+      {
+          $('.timer').addClass('red');
+          $('.timer').removeClass('dark_red');
+          $('.timer').removeClass('cool-grey');
+
+      }
+      else
+      {
+          $('.timer').removeClass('dark_red');
+          $('.timer').removeClass('red');
+          $('.timer').removeClass('cool-grey');
+
+      }
+      })
+  })
+
+</script>
+
+
+
+<%= form_for Tweet.new do |f| %>
+    <div id="new_tweet_form">
+      <h2>What are you doing?</h2>
+      <span class="timer">140</span>
+    <%= f.text_area :message, :class => "tweet_message_box"%>
+    <% if @last_tweet %>
+          <div id="lastest_message">
+            <div class="status">
+              <% if @last_tweet.message %>
+                  <strong>Latest:  </strong><%= h @last_tweet.message %> <span class="status_time"><%= distance_of_time_in_words_to_now(@last_tweet.created_at) %> ago</span>
+              <%end %>
+            </div>
+          </div>
+          <% end %>
+
+      <div class="tweet_button">
+
+
+    <%= f.submit "Post", :class  => "tweet_button_btn"%>
+      </div>
+      <div class="clear"></div>
+
+    </div>
+    <div class="clear"></div>
+
+
+    <%=  render :partial => "tweets_list", :locals => { :tweets => @tweets } %>
+
+
+
+<% end %>
+
+
+

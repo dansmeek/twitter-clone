@@ -1,0 +1,40 @@
+<div id="my_info_container" xmlns="http://www.w3.org/1999/html">
+<%= image_tag current_user.gravatar_url(:size => 32) %>  <br>
+  <div class="contents"><span class="my_user"><%= link_to current_user.username, current_user.username  %></span><br>
+    <span class="my_profile">View My Profile Page</span>
+
+
+    <div class="following_followers_container">
+<span class="my_tweets"><span class="hard_count"><%= current_user.tweets.count %></span> Tweets</span><br><span class="my_tweets">
+<% link1 = '<span class="hard_count">' + current_user.friendships.count.to_s + '</span>' + ' Following'%> <%= link_to link1.html_safe, following_path %></span>
+     <% follower_count = '<span class="hard_count">' + (current_user.friends_of.count).to_s + '</span>'%>
+      <% textlink = follower_count + ' ' +  pluralize_without_count(current_user.friends_of.count, "Follower")%>
+
+      <%= link_to textlink.html_safe, followers_path %>
+      </span>
+    </div>
+    </div>
+
+
+
+
+</div>
+
+<div id="thumbnail_container">
+  <h4>Following</h4>
+  <% current_user.friends.each do |friend| %>
+      <a href="<%=friend.username%>"><%=image_tag friend.gravatar_url(:size=>30), :alt => friend.username, :title =>friend.username %></a>
+
+
+  <% end %>
+
+
+  <h4>Followers</h4>
+
+  <% current_user.friends_of.each do |friend| %>
+
+        <a href="<%=friend.username%>"><%= image_tag friend.gravatar_url(:size => 30), :alt=>friend.username, :title=> friend.username %></a>
+                                           <% end %>
+
+
+</div>
