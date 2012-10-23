@@ -9,8 +9,8 @@
         <div class="tweet_message_container">
           <span class="full_name"><%= link_to friend.username, friend.username %></span>
           <span class="tweet_name"><s>@</s>username</span>
+         <% if (friend.tweets.last)  %>
           <span class="time_ago"><%= distance_of_time_in_words_to_now(friend.tweets.last.created_at) %> ago</span>
-
           <div class="clear"></div>
 
           <span class="message"> <% status = h friend.tweets.last.message %> <%=status_parser(status) %></span>
@@ -25,6 +25,8 @@
                 <span class="favorite"><a href="#">Favorite</a></span>
                  </span>
           </div>
+          <% end %>
+
         </div>
         <div class="button-container">
 

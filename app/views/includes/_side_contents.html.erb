@@ -8,9 +8,11 @@
 <span class="my_tweets"><span class="hard_count"><%= current_user.tweets.count %></span> Tweets</span><br><span class="my_tweets">
 <% link1 = '<span class="hard_count">' + current_user.friendships.count.to_s + '</span>' + ' Following'%> <%= link_to link1.html_safe, following_path %></span>
      <% follower_count = '<span class="hard_count">' + (current_user.friends_of.count).to_s + '</span>'%>
+      <% if (follower_count.nil?)   %>
       <% textlink = follower_count + ' ' +  pluralize_without_count(current_user.friends_of.count, "Follower")%>
 
       <%= link_to textlink.html_safe, followers_path %>
+          <% end %>
       </span>
     </div>
     </div>

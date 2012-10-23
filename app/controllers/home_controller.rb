@@ -59,6 +59,9 @@ class HomeController < ApplicationController
 
   def search
     @q = params[:q]
+    if @q == ""          #hack incase the user enters a blank field!  sorry.
+      @q = " "
+    end
     @friends = User.find_by_search_query(@q)
 
   end
@@ -79,3 +82,4 @@ class HomeController < ApplicationController
 
 
 end
+
