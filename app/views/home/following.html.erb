@@ -9,28 +9,9 @@
         <div class="tweet_message_container">
           <span class="full_name"><%= link_to friend.username, friend.username %></span>
           <span class="tweet_name"><s>@</s>username</span>
-<<<<<<< HEAD
           <% if friend.tweets.last %>
               <%=  render :partial => "tweet", :locals => { :friend => friend } %>
            <% end %>
-=======
-          <span class="time_ago"><%= distance_of_time_in_words_to_now(friend.tweets.last.created_at) %> ago</span>
-
-          <div class="clear"></div>
-
-          <span class="message"> <% status = h friend.tweets.last.message %> <%=status_parser(status) %></span>
-          <div class="tweet_footer">
-                <span class="expand-stream">
-                <span class="expand"><a href="#">expand</a></span>
-                <span class="collapse"><a href="#">collapse</a></span>
-                </span>
-                <span class="actions">
-                <span class="reply"><a href="#">reply</a></span>
-                <span class="retweet"><a href="#">Retweet</a></span>
-                <span class="favorite"><a href="#">Favorite</a></span>
-                 </span>
-          </div>
->>>>>>> 6cd90d17e8daed22d4256f2ec1ab77423a2cfb14
         </div>
         <div class="button-container">
           <%= submit_tag "Unfollow", :class => "follow-button", :name => friend.username%>
