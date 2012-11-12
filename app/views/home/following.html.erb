@@ -1,0 +1,41 @@
+<div id="notice"></div>
+<div class="your-following"><h3>You are following <%=current_user.friends.count %> people.</h3></div>
+<ul id="tweet_list">
+
+  <% @friends.each do |friend| %>
+      <li<% if (@friends.first == friend) %> class="first" <% end %> id="<%=friend.username%>">
+
+        <%= image_tag friend.gravatar_url(:size => 48)%>
+        <div class="tweet_message_container">
+          <span class="full_name"><%= link_to friend.username, friend.username %></span>
+          <span class="tweet_name"><s>@</s>username</span>
+          <% if friend.tweets.last %>
+              <%=  render :partial => "tweet", :locals => { :friend => friend } %>
+           <% end %>
+        </div>
+        <div class="button-container">
+          <%= submit_tag "Unfollow", :class => "follow-button", :name => friend.username%>
+        </div>
+        <div class="clear"></div>
+
+
+      </li>  <% end %>
+
+</ul>
+
+<script type = "text/javascript">
+
+  $(function(){
+     $('.follow-button').click(function(){
+              $.ajax({
+                  type:'POST',
+                  url: "/remove_friend/" + $(this).attr('name'),
+                  success: function(msg) {
+                      $('#' + msg).slideUp('slow');
+                      $('#notice').html('You are no longer following ' + msg);
+                      $('#notice').show();                  }
+              });
+     })
+  });
+
+</script>

@@ -1,0 +1,39 @@
+</p>
+<ul id="tweet_list">
+
+
+  <% tweets.each do |tweet|%>
+      <li<% if (@tweets.first == tweet) %> class="first" <% end %>>
+
+        <%= image_tag tweet.user.gravatar_url(:size => 48)%>
+        <div class="tweet_message_container">
+          <span class="full_name"><%= link_to tweet.user.username, tweet.user.username %></span>
+          <span class="tweet_name"><s>@</s><%= tweet.user.username %></span>
+          <% if tweet.message %>
+              <span class="time_ago"><%= distance_of_time_in_words_to_now(tweet.created_at) %> ago</span>
+              <div class="clear"></div>
+
+              <span class="message">
+              <% text = h tweet.message %>
+              <%=status_parser(text) %>
+
+             </span>
+         <% end %>
+
+          <div class="tweet_footer">
+                <span class="expand-stream">
+                <span class="expand"><a href="#">expand</a></span>
+                <span class="collapse"><a href="#">collapse</a></span>
+                </span>
+                <span class="actions">
+                <span class="reply"><a href="#">reply</a></span>
+                <span class="retweet"><a href="#">Retweet</a></span>
+                <span class="favorite"><a href="#">Favorite</a></span>
+                 </span>
+          </div>
+        </div>
+        <div class="clear"></div>
+
+      </li>
+  <% end %>
+</ul>

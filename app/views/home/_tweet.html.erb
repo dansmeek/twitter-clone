@@ -1,0 +1,14 @@
+<span class="time_ago"><%= distance_of_time_in_words_to_now(friend.tweets.last.created_at) %> ago</span>
+<div class="clear"></div>
+<span class="message"> <% status = h friend.tweets.last.message %> <%=status_parser(status) %></span>
+<div class="tweet_footer">
+                <span class="expand-stream">
+                    <span class="expand"><a href="#">expand</a></span>
+                    <span class="collapse"><a href="#">collapse</a></span>
+                    </span>
+                <span class="actions">
+                    <span class="reply"><a href="#">reply</a></span>
+                    <span class="retweet"><a href="#">Retweet</a></span>
+                    <span class="favorite"><a href="#">Favorite</a></span>
+                 </span>
+</div>

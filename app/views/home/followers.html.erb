@@ -1,0 +1,95 @@
+<div id="notice"></div>
+<div class="your-following"><h3>You are being followed by <%=current_user.friends_of.count %> people.</h3></div>
+<ul id="tweet_list">
+           <% @followers = current_user.friends_of %>
+  <% @followers.each do |friend| %>
+      <li<% if (@followers.first == friend) %> class="first" <% end %> id="<%=friend.username%>">
+
+        <%= image_tag friend.gravatar_url(:size => 48)%>
+        <div class="tweet_message_container">
+          <span class="full_name"><%= link_to friend.username, friend.username %></span>
+          <span class="tweet_name"><s>@</s>username</span>
+          <% if friend.tweets.last %>
+              <%=  render :partial => "tweet", :locals => { :friend => friend } %>
+          <% end %>
+
+
+        </div>
+        <div class="button-container">
+          <% if current_user.is_friend? friend %>
+        <%= submit_tag "Unfollow", :class => "follow-button", :name => friend.username, :id=>"unfollow" %>
+          <% else %>
+              <%= submit_tag "Follow", :class => "follow-button", :name => friend.username, :id=>"follow" %>
+          <% end %>
+
+
+        </div>
+        <div class="clear"></div>
+
+
+      </li>  <% end %>
+
+</ul>
+
+<script type = "text/javascript">
+
+    $(function(){
+        $('.follow-button').click(function(){
+
+
+
+            if ($(this).attr('id') == 'follow')
+            {
+                var followname = $(this).attr('name');
+
+                if ($(this).css('display') != 'none')
+                {        alert(followname);
+                    var appendhyperlink = $('<a>').attr('href', followname).addClass('sidefollowing_'+followname);
+                    var appendimage = $('<img>').attr({
+                        src: 'https://secure.gravatar.com/avatar/ba84dd7085d89c6eabadab643749b177.png?r=PG&s=30',
+                        title: followname
+                    });
+                    appendhyperlink.wrapInner(appendimage);
+                    var areatoappend = $('.following_avatars');
+                    $('.following_avatars').append(appendhyperlink);
+                }
+                else
+                {       alert(followname);
+                    followname.show();
+                }
+                $(this).attr('value', 'Unfollow');
+                $(this).attr('id', "unfollow");
+                $.ajax({
+                    type:'POST',
+                    url: "/add_friend/" + $(this).attr('name'),
+                    success: function(msg) {
+                        $('#notice').html('You are now following ' + msg);
+                         $('#notice').show();
+
+
+                    }
+                })
+            }
+            else if ($(this).attr('id') == 'unfollow')
+            {
+                $(this).attr('value', 'Follow');
+                var follower = $(this).attr('name');
+
+                var sidecontent = $('.sidefollowing_'+follower);
+                sidecontent.hide();
+                $(this).attr('id', 'follow');
+                $.ajax({
+                type:'POST',
+                url: "/remove_friend/" + $(this).attr('name'),
+                success: function(msg) {
+
+                    $('#notice').html('You are no longer following ' + msg);
+                    $('#notice').show();
+
+                }
+                });
+        }
+        })
+    });
+
+</script>

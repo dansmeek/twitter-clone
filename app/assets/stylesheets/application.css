@@ -1,0 +1,695 @@
+body {
+    background-color: #C0DEED;
+    font-family: Verdana, Helvetica, Arial;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url(./bg.png);
+
+
+}
+#header{
+    background-image: url('./sprites.png');
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-color: #252525;
+    position:relative;
+    width: 850px;
+    margin: 0 auto;
+    height:40px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+}
+#header img {
+    float:left;
+    margin-top:-40px;
+
+}
+
+#search_bar
+{
+    position:relative;
+    float:left;
+}
+.search-icon
+{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 25px;
+    background-position: -20px -710px;
+    width: 12px;
+    height: 14px;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: text-top;
+    background-image: url('./twitter-icons.png');
+    background-repeat: no-repeat;
+
+
+}
+.search-input
+{display: block;
+    margin-top:6px;
+    width: 113px;
+    height: 14px;
+    min-height: auto	9;
+    padding: 6px 27px 6px 12px;
+    font-size: 12px;
+    line-height: 1;
+    color: #666;
+    background-color: #CCC;
+    border: 0;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.search-input:focus
+{
+    outline: none;
+}
+#nav
+{
+    margin: 0px auto;
+    margin-top:0px;
+    background-color: #f0f0f0;
+}
+
+#nav ul li{
+    top:10px;
+    color:#f0f0f0;
+    list-style:none;
+    position:relative;
+    float:left;
+    padding-right:15px;
+    padding-left:15px;
+}
+#nav ul li a {
+    top:2px;
+    color:#f0f0f0;
+    list-style:none;
+    position:relative;
+    float:left;
+    padding-right:20px;
+    padding-left:20px;
+    text-decoration:none;
+
+}
+
+
+.logout-box{
+
+    float:right;
+    margin-top:14px;
+    margin-right:10px;
+    color:#efefef;
+
+}
+.logout-box, logout-box a
+{
+    float:right;
+    font-size:10px;
+    font-color:#666;
+    text-decoration: none;
+}
+.logout-box a
+{
+    font-size:10px;
+    color:#efefef;
+    text-decoration:none;
+}
+
+a img {
+    border: none;
+}
+
+a {
+    color: #0000FF;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+#container {
+    width: 840px;
+    margin: 0 auto 25px auto;
+    padding: 5px 5px;
+    /*border: solid 1px black;*/
+    margin-top: 20px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(255,255,255,.5);
+)
+
+
+}
+
+
+#main {
+    margin-top:5px;
+    padding-left:10px;
+    margin-left: 5px;
+    float: left;
+    border: 1px solid #EEE;
+    background-color: #FFFFFF;
+    width:530px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#side{
+    margin-top:5px;
+
+    font-size: 12px;
+    color: #999;
+    width:250px;
+    float:right;
+
+    padding-left:5px;
+    padding-right:5px;
+}
+#my_info_container
+{
+    background-color: #F9F9F9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height:300px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    margin-right:5px;
+
+}
+#my_info_container img
+{float:left;
+
+width: 32px;
+    height: 32px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top:10px;
+    margin-left:20px;
+}
+
+#my_info_container .contents
+{           margin-top:-3px;
+
+    float:left;
+    padding-left:10px;
+}
+
+#my_info_container .following_followers_container
+{
+    margin-top:4px;
+}
+#my_info_container span.my_profile
+{
+    color: #999;  font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contents span.my_user
+{
+    font-weight:bold;
+    color:#000;
+    font-size:14px;
+}
+.contents span.my_user  a
+{
+    font-weight:bold;
+    color:#000;
+    font-size:14px;
+    text-decoration: none;
+}
+.content span.my_user a:link
+{
+    display: block;
+    font-size: 14px;
+    color: #333;
+    text-shadow: 0 1px 0 white;
+}
+
+.following_followers_container span.hard_count
+{
+    font-weight:bold;
+    font-size:14px;
+    color:#000;
+}
+.following_followers_container span.hard_count a
+{
+    font-weight:bold;
+    font-size:14px;
+    color:#000;
+    text-decoration:none;
+}
+.following_followers_container span.following_count a
+{
+    font-weight: bold;
+    font-size:12px;
+    color:#999;
+    text-decoration:none;
+}
+
+.following_followers_container span.my_tweets, a
+{padding-left:0px;
+    font-size: 12px;
+    color: #999;
+    text-decoration: none;
+}
+
+#flash_notice, #flash_error, #flash_alert {
+    padding: 5px 8px;
+    margin: 10px 0;
+}
+
+#flash_notice {
+    background-color: #CFC;
+    border: solid 1px #6C6;
+    padding: 5px 8px;
+    margin: 10px 0;
+    width:95%;
+}
+#notice
+{
+    background-color: #CFC;
+    padding: 5px 8px;
+    padding-right:10px;
+    margin: 10px 0;
+    border: solid 1px #6C6;
+    width:95%;
+    display:none;
+
+}
+
+#flash_error, #flash_alert {
+    background-color: #FCC;
+    border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+    display: inline;
+}
+
+.error_messages {
+    width: 400px;
+    border: 2px solid #CF0000;
+    padding: 0px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    font-size: 12px;
+}
+
+.error_messages h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 0;
+    background-color: #c00;
+    color: #fff;
+}
+
+.error_messages p {
+    margin: 8px 10px;
+}
+
+.error_messages ul {
+    margin: 0;
+}
+
+#tweet_list
+{
+    margin:0; padding: 0;
+}
+
+#tweet_list first
+{
+
+}
+
+#tweet_list li {
+    list-style: none;
+    padding: 10px 0px 10px 0px;
+    margin: 0px;
+    background-color: #FFFFF;
+    border-top: 1px dotted #D2DADA;
+    width:522px;
+}
+#tweet_list li:hover {
+    background-color: #F7F7F7;
+}
+#tweet_list li img {
+    float:left;
+    width: 48px;
+    height: 48px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+.clear{
+    clear:both;
+    height: 0px;
+    overflow: hidden;
+}
+
+#tweet_list li div.tweet_message_container {
+    float:left;
+    margin-left:10px;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+    width:415px;
+    word-wrap:break-word;
+}
+
+.red
+{    color: #D40D12 !important;
+}
+
+.dark_red
+{
+    color: #5C0002 !important;
+
+}
+.cool-grey
+{
+    color: #444 !important;
+}
+
+#tweet_list li div.tweet_message_container a{
+    color:  #0084B4;
+    text-decoration: none;
+}
+#tweet_list li div.tweet_message_container span.full_name a{
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+}
+#tweet_list li div.tweet_message_container span.full_name a:hover {
+    color: #0084B4;
+    text-decoration: underline;
+
+}
+#tweet_list li div.tweet_message_container span.tweet_name {
+    font-size: 12px;
+    color: #999;
+    line-height: 18px
+
+}
+#tweet_list li div.tweet_message_container span.tweet_name s {
+    font-size: 12px;
+    color: #999;
+    text-decoration: none;
+}
+
+#tweet_list li div.tweet_message_container span.time_ago {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-right:-50px;
+    float:right;
+    color: #BBB;
+}
+#tweet_list li div.tweet_message_container span.message {
+    font-size: 14px;
+    color: #444;
+    line-height: 18px;
+    font-weight:normal;
+    font-size:12px;
+
+}
+#tweet_list li div.tweet_message_container div.tweet_footer span.expand-stream a {
+
+    font-size: 12px;
+    color: #999;
+    display: visible;
+}
+#tweet_list li div.tweet_message_container div.tweet_footer span.expand-stream span.expand:hover {
+    display:none;
+}
+#tweet_list li div.tweet_message_container div.tweet_footer span.expand-stream span.collapse {
+    display:none;
+}
+#tweet_list li div.tweet_message_container div.tweet_footer span.actions {
+    display:none;
+
+}
+#container
+{
+    margin:auto;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-weight:bold;
+    font-size: 14px;
+    color:#333;
+
+}
+#new_tweet_form h2
+{
+    margin:auto;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-weight:normal;
+    color:#666;
+    float:left;
+    margin-top:10px;
+    margin-left:4px;
+    font-size:14px;
+}
+#new_tweet_form .timer
+{float:right;
+    margin-top:5px;
+    font-size:20px;
+    margin-right:-20px;
+    color:#666;
+    padding-bottom:10px;
+    font-weight:100;
+
+}
+#new_tweet_form .tweet_message_box
+{
+resize: none;  border: 1px solid #CCC;
+    width: 508px;
+    height:20px;
+    padding: 6px 8px 5px;
+    line-height: 18px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05),0 1px 0 white;
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05),0 1px 0 white;
+}
+#new_tweet_form .tweet_message_box
+{
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    transition: .2s linear background;
+
+    text-shadow: 0 1px 0 white;
+    color: #333;
+    font-weight:normal;
+    font: -webkit-small-control;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+#new_tweet_form .tweet_message_box:focus
+{
+    font-family: "Helvetica Neue",Arial,sans-serif;
+
+    border-color: #56B4EF;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05),0 0 8px rgba(82, 168, 236, .6);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 0 8px rgba(82,168,236,.6);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05),0 0 8px rgba(82, 168, 236, .6);
+    height:50px;
+    transition: .2s linear background;
+    text-shadow: 0 1px 0 white;
+    color: #333;
+    font-weight:normal;
+    font: -webkit-small-control;
+    letter-spacing: normal;
+    word-spacing: normal;
+
+}
+#new_tweet_form{
+    float:left;
+    margin:auto;
+    width:500px;
+    padding-bottom:20px;
+}
+.status{
+
+    float:left;
+    font-size:10px;
+    width:440px;
+    margin-left:3px;
+    color:#666;
+    word-wrap: break-word;
+}
+.status strong
+{
+    font-weight:bold;
+    font-size:12px;
+}
+
+.tweet_button {
+    float:right;
+    margin-right:-25px;
+    margin-top:5px;
+    color:#00000;
+}
+
+.tweet_button_btn{
+color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+    background-color: #019AD2;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear,left top,left bottom,from(#33BCEF),to(#019AD2));
+    background-image: -moz-linear-gradient(#33BCEF,#019AD2);
+    background-image: -ms-linear-gradient(#33BCEF,#019AD2);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#33BCEF),color-stop(100%,#019AD2));
+    background-image: -webkit-linear-gradient(#33BCEF,#019AD2);
+    background-image: -o-linear-gradient(#33BCEF,#019AD2);
+    background-image: linear-gradient(#33BCEF,#019AD2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bcef',endColorstr='#019ad2',GradientType=0);
+    border-color: #057ED0;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 18px;
+
+
+
+}
+.status_time
+{
+    padding-left:14px;
+    color: #999;
+}
+
+.current_user
+{
+  vertical-align: top;
+}
+
+#following_user img
+{
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#thumbnail_container h1, h2, h3, h4
+{
+
+    font-size:14px;
+    color: #000000;
+}
+
+#thumbnail_container
+{
+    margin-top:25px;
+
+    width:230px;
+
+    padding-left:5px;
+    padding-right:5px;
+
+    z-index:2;
+    background-color:#F9F9F9 !important;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    padding-top:5px;
+    padding-left:10px;
+    padding-bottom:10px;
+}
+.your-following
+{
+    padding-top:15px;
+    padding-bottom:15px;
+    margin:auto;
+}
+.your-following h3
+{
+    font-size:14px;
+
+}
+.button-container
+{
+    position:relative;
+    float:right;
+    margin-top:-20px;
+}
+.follow-button
+{
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+    background-color: #019AD2;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear,left top,left bottom,from(#33BCEF),to(#019AD2));
+    background-image: -moz-linear-gradient(#33BCEF,#019AD2);
+    background-image: -ms-linear-gradient(#33BCEF,#019AD2);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#33BCEF),color-stop(100%,#019AD2));
+    background-image: -webkit-linear-gradient(#33BCEF,#019AD2);
+    background-image: -o-linear-gradient(#33BCEF,#019AD2);
+    background-image: linear-gradient(#33BCEF,#019AD2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bcef',endColorstr='#019ad2',GradientType=0);
+    border-color: #057ED0;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 18px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border-color: #057ED0;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    width: 86px;
+    height: 28px;
+}
+.follow_form
+{
+    padding-bottom: 10px;
+}
